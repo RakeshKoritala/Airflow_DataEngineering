@@ -12,7 +12,8 @@ Object Store Bucket: [GCS Bucket](https://console.cloud.google.com/storage/brows
 
 ##  Vehicle Data DAG:
 
-This assumes the source system data is located in Object store such as GCS.  Following are the design considerations that went into this DAG.
+The goal of this DAG is to maintain vehicle information with latest and historic information. 
+This DAG assumes the source system data is located in Object store such as GCS.  Following are the design considerations that went into this DAG.
 
 1. Object store operations are atomic. Files that are being uploaded is not visible to other users until it's done.
 2. We don't delete all the files in GCS. Because a DAG is multi step/node, so it could be that a file is uploaded after we loaded the data into BigQuery, and we don't want to delete the file that's not loaded into BigQuery.
