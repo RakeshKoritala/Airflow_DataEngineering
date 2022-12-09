@@ -6,7 +6,7 @@ This Project demonstrates data engineering through Airflow and BigQuery.  There 
 
 Airflow URL: http://35.219.142.46:8080/ ( Credentials sent through email or reach out to me). Please note it's HTTP and not https
 Data wharehouse: [BigQuery Publicly accessible wharehouse](https://console.cloud.google.com/bigquery?authuser=0&project=rk-airflow&ws=!1m4!1m3!3m2!1srk-airflow!2sworksample) ( you need a gmail account)
-
+Object Store Bucket: [GCS Bucket](https://console.cloud.google.com/storage/browser/rk-logistic-bucket)
 
 ##  Vehicle Data DAG:
 
@@ -33,4 +33,7 @@ DAG does the following:
 3. We invoke the query which will insert the data into weather table.
 
 
-
+## Code Structure:
+1. dags - This contains all the dag code.
+2. sql -  This contains all the SQL and Jinja templated SQL. when deployed this directory should be located in sql
+3. data - this is test data which you can copy into GCS Storage.
