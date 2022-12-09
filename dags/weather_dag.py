@@ -9,6 +9,7 @@ default_arguments = {'owner': 'Rakesh Koritala', 'start_date': days_ago(1)}
 GCS_BUCKET_NAME = 'rk-logistic-bucket'
 BQ_TABLE_NAME = 'rk-airflow.weather_historic'
 GCP_CONNECTION_ID='google_cloud_default'
+WEATHER_API_TOKEN = '9a536a673e5fdf908215876bcb6a8076'
 with DAG(
     'weather_dag',
      schedule_interval='@hourly',
@@ -18,7 +19,7 @@ with DAG(
 ) as dag:
 
     def ingest_weather(**kwargs):
-        parameters={'query':'New York City','access_key':'9a536a673e5fdf908215876bcb6a8076'}
+        parameters={'query':'New York City','access_key': WEATHER_API_TOKEN}
         response=requests.get('http://api.weatherstack.com/current', parameters)
         response.raise_for_status()
         result_str = response.json()
