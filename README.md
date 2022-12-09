@@ -5,7 +5,9 @@ This Project demonstrates data engineering through Airflow and BigQuery.  There 
 ##  Cluster Info.
 
 Airflow URL: http://35.219.142.46:8080/ ( Credentials sent through email or reach out to me). Please note it's HTTP and not https
+
 Data wharehouse: [BigQuery Publicly accessible wharehouse](https://console.cloud.google.com/bigquery?authuser=0&project=rk-airflow&ws=!1m4!1m3!3m2!1srk-airflow!2sworksample) ( you need a gmail account)
+
 Object Store Bucket: [GCS Bucket](https://console.cloud.google.com/storage/browser/rk-logistic-bucket)
 
 ##  Vehicle Data DAG:
